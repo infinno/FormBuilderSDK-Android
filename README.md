@@ -28,12 +28,15 @@ This creates an instance of FormBuilder and then opens a new interface based on 
 The callingServiceToken argument is a unique client identifier that will be stored in the submission. Calling service token can be null.
 
 ```kotlin
-val intent = Intent(this, StartFormBuilderActivity::class.java)
 intent.putExtra("stepID", "PUT_STEP_ID_HERE")
-startActivity(intent)
 ```
 This creates an instance of FormBuilder and then opens a new interface of a previously created process at the step which the user has reached before (e.g. if they have interrupted it for some reason).
-It can also just be the first step for a process that the backend has preconfigured in some way.
+It can also just be the first step for a process that the backend has preconfigured in some way. Either put processID or stepID when creating the intent.
+
+```kotlin
+intent.putExtra("baseURL", "PUT_BASE_URL_HERE")
+```
+You can put your own base url, to which you can send your requests, or you can simply not add it and use the default url.
 
 ```kotlin
 FBDocDataFragment.ProcessResult.getProcessResultCallback { success, error ->
@@ -45,3 +48,23 @@ FBDocDataFragment.ProcessResult.getProcessResultCallback { success, error ->
 ```
 
 Calling getProcessResultCallback tells you if the started process finished successfully or if there was an error with the process
+
+Optionally you can pass an FBAppearance object in the intent.putExtra when starting the FormBuilder, with which you can configure some of the appearance of the labels, fields, buttons:
+
+```kotlin
+val appearance = FBAppearance(
+   textColor = ContextCompat.getColor(this, R.color.purple_500),
+   backgroundColor = ContextCompat.getColor(this, R.color.teal_700),
+   buttonTextColor = ContextCompat.getColor(this, R.color.color_blue),
+   buttonBackgroundColor = ContextCompat.getColor(this, R.color.myColor),
+   progressBarColor = ContextCompat.getColor(this, R.color.teal_700),
+   viewTextColor = ContextCompat.getColor(this, R.color.purple_500),
+   viewBackgroundColor = ContextCompat.getColor(this, R.color.white)
+)
+
+val intent = Intent(this, StartFormBuilderActivity()::class.java)
+intent.putExtra("processID", "PUT_PROCESS_ID_HERE")
+intent.putExtra("appearance", appearance)
+startActivity(intent)
+```
+If you don’t pass an appearance object, the SDK will use default values.
