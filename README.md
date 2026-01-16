@@ -13,8 +13,8 @@
    implementation( "com.squareup.retrofit2:converter-gson:2.9.0")\
    implementation( "com.squareup.okhttp3:logging-interceptor:4.9.2")\
    If not please add them.
-8. Sync the project and do a clean rebuild
-9. Now you can proceed to the "How to use ?" section
+7. Sync the project and do a clean rebuild
+8. Now you can proceed to the "How to use ?" section
 
 
 ## How to use ?
@@ -55,17 +55,36 @@ FBDocDataFragment.ProcessResult.getProcessResultCallback { success, error ->
 
 Calling getProcessResultCallback tells you if the started process finished successfully or if there was an error with the process
 
-Optionally you can pass an FBAppearance object in the intent.putExtra when starting the FormBuilder, with which you can configure some of the appearance of the labels, fields, buttons:
+Optionally, you can pass an FBAppearance object in the intent.putExtra when starting the FormBuilder SDK, with which you can configure the appearance of the labels, fields, buttons:
 
 ```kotlin
 val appearance = FBAppearance(
-   textColor = ContextCompat.getColor(this, R.color.purple_500),
-   backgroundColor = ContextCompat.getColor(this, R.color.teal_700),
-   buttonTextColor = ContextCompat.getColor(this, R.color.color_blue),
-   buttonBackgroundColor = ContextCompat.getColor(this, R.color.myColor),
-   progressBarColor = ContextCompat.getColor(this, R.color.teal_700),
-   viewTextColor = ContextCompat.getColor(this, R.color.purple_500),
-   viewBackgroundColor = ContextCompat.getColor(this, R.color.white)
+   backgroundColor = ContextCompat.getColor(this, R.color.teal_700),            // Background of all screens in the SDK
+
+   toastFont = R.font.momoregular,                                              // Font of the directions text during KYC 
+   toastTextSize = 16,                                                          // Text size of the directions text during KYC
+   toastTextColor = ContextCompat.getColor(this, R.color.white),                // Text color of the directions text during KYC
+   
+   textFont = R.font.momoregular,                                               // Font of the text that is displayed only (not editable text)    
+   viewTextSize = 16,                                                           // Text size of the text that is displayed only (not editable text)
+   viewTextColor = ContextCompat.getColor(this, R.color.purple_500),            // Color of the text that is displayed only (not editable text)
+   viewBackgroundColor = ContextCompat.getColor(this, R.color.white),           // Color of the background of displayed text
+
+   inputFont = R.font.momoregular,                                              // Font of the input text
+   inputTextSize = 16,                                                          // Size of the input text            
+   inputTextColor = ContextCompat.getColor(this, R.color.white),                // Color of input text field
+   inputBackgroundColor = ContextCompat.getColor(this, R.color.purple_500),     // Background color of editable text field
+   
+   buttonFont = R.font.momoBold,                                                // Font of the button text
+   buttonTextSize = 16,                                                         // Text size of the button text
+   buttonCornerRadius = 30f,                                                    // Corner radius of buttons (0f for square button, anything above 0f makes corners rounded)
+   buttonTextColor = ContextCompat.getColor(this, R.color.color_blue),          // Color of the button text
+   buttonBackgroundColor = ContextCompat.getColor(this, R.color.myColor),       // Background color of buttons
+   
+   progressBarColor = ContextCompat.getColor(this, R.color.teal_700),           // Color of the circular progress bar that appears when changing between screens or loading requests
+   
+   linearProgressIndicatorColor = ContextCompat.getColor(this, R.color.white),  // Color of the indicator that is loading while scanning your ID in KYC
+   linearProgressTrackColor = ContextCompat.getColor(this, R.color.myColor)     // Color of the track that is shown while scanning your ID in KYC
 )
 
 val intent = Intent(this, StartFormBuilderActivity()::class.java)
@@ -73,4 +92,4 @@ intent.putExtra("processID", "PUT_PROCESS_ID_HERE")
 intent.putExtra("appearance", appearance)
 startActivity(intent)
 ```
-If you don’t pass an appearance object, the SDK will use default values.
+If you don’t pass an appearance object or a certain property, the SDK will use default values.
