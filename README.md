@@ -45,11 +45,11 @@ intent.putExtra("showCancelButton", true)
 Optionally you can show a cancel session button while streaming. Default is set to false
 
 ```kotlin
-FBDocDataFragment.ProcessResult.getProcessResultCallback { success, error ->
+FBDocDataFragment.ProcessResult.getProcessResultCallback { success ->
    if (success)
    //Do something on success
    else
-   // Handle error
+   //Do something on failed
 }
 ```
 
