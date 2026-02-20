@@ -55,6 +55,14 @@ FBDocDataFragment.ProcessResult.getProcessResultCallback { success ->
 
 Calling getProcessResultCallback tells you if the started process finished successfully or if there was an error with the process
 
+```kotlin
+ FormFragment.ProcessResult.postToHostUI { status ->
+    // Parameter status - the status from the SDK
+}
+```
+
+postToHostUI is called when a field with a specific type is received
+
 Optionally, you can pass an FBAppearance object in the intent.putExtra when starting the FormBuilder SDK, with which you can configure the appearance of the labels, fields, buttons:
 
 ```kotlin
