@@ -1,0 +1,166 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "com.formbuilder.sdk",
+    "module": "formbuilder-sdk",
+    "version": "1.1.6",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.7"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.databinding",
+          "module": "viewbinding",
+          "version": {
+            "requires": "8.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "formbuilder-sdk-1.1.6.aar",
+          "url": "formbuilder-sdk-1.1.6.aar",
+          "size": 1221860,
+          "sha512": "2f3364f940bb7b70e6ad5e722146dc6e58ff5213e8d428d694eabe9a19232e0771c6d4c3e9a2a5e428a2880d59c74f21b08b22a8701c27380bee6be142dba8b0",
+          "sha256": "630305f37da200ea4841d2bbffb67eababcd68ade6248c0d5ca678f7057a65a9",
+          "sha1": "7cbca977a9e3e3629ca3478c8c512263815dea49",
+          "md5": "8ed611452dceae33043db087f5cd4316"
+        }
+      ]
+    },
+    {
+      "name": "releaseRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-parcelize-runtime",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "androidx.core",
+          "module": "core-ktx",
+          "version": {
+            "requires": "1.13.1"
+          }
+        },
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.7.0"
+          }
+        },
+        {
+          "group": "com.google.android.material",
+          "module": "material",
+          "version": {
+            "requires": "1.12.0"
+          }
+        },
+        {
+          "group": "androidx.constraintlayout",
+          "module": "constraintlayout",
+          "version": {
+            "requires": "2.1.4"
+          }
+        },
+        {
+          "group": "io.insert-koin",
+          "module": "koin-android",
+          "version": {
+            "requires": "3.5.6"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "converter-gson",
+          "version": {
+            "requires": "2.9.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "logging-interceptor",
+          "version": {
+            "requires": "4.9.2"
+          }
+        },
+        {
+          "group": "androidx.databinding",
+          "module": "viewbinding",
+          "version": {
+            "requires": "8.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib-jdk8",
+          "version": {
+            "requires": "1.9.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "formbuilder-sdk-1.1.6.aar",
+          "url": "formbuilder-sdk-1.1.6.aar",
+          "size": 1221860,
+          "sha512": "2f3364f940bb7b70e6ad5e722146dc6e58ff5213e8d428d694eabe9a19232e0771c6d4c3e9a2a5e428a2880d59c74f21b08b22a8701c27380bee6be142dba8b0",
+          "sha256": "630305f37da200ea4841d2bbffb67eababcd68ade6248c0d5ca678f7057a65a9",
+          "sha1": "7cbca977a9e3e3629ca3478c8c512263815dea49",
+          "md5": "8ed611452dceae33043db087f5cd4316"
+        }
+      ]
+    },
+    {
+      "name": "releaseSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "formbuilder-sdk-1.1.6-sources.jar",
+          "url": "formbuilder-sdk-1.1.6-sources.jar",
+          "size": 224125,
+          "sha512": "53fcfe7311b13f0726415c82d193a8ca82657c180e52925e0c6adff64169f2ceab9ad0d5407866c1c6e991da54c3fb60e861e0bc0951ab7c40afd1acd55b3e0c",
+          "sha256": "02e517211a969b213d4e8af9402319168bafa36c752b6b44dd08f0b7c88b5aa5",
+          "sha1": "39f761aa04215a1552f609e2f801df888b25062f",
+          "md5": "836dbc7dab62ed653a687a131c1cb332"
+        }
+      ]
+    }
+  ]
+}
