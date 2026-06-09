@@ -67,6 +67,8 @@ Optionally, you can pass an FBAppearance object in the intent.putExtra when star
 
 ```kotlin
 val appearance = FBAppearance(
+   statusBarTextDark = false,                                                   // Color for the status bar text (false - white, true - black)
+
    backgroundColor = ContextCompat.getColor(this, R.color.teal_700),            // Background of all screens in the SDK
 
    toastFont = R.font.momoregular,                                              // Font of the directions text during KYC 
